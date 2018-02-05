@@ -15,6 +15,7 @@
 		A7C9BA8E202829D1003CB82B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A7C9BA8D202829D1003CB82B /* main.m */; };
 		A7C9BA98202829D1003CB82B /* DrawingSignatureTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A7C9BA97202829D1003CB82B /* DrawingSignatureTests.m */; };
 		A7C9BAA3202829D1003CB82B /* DrawingSignatureUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = A7C9BAA2202829D1003CB82B /* DrawingSignatureUITests.m */; };
+		A7C9BAB220282E4E003CB82B /* DrawingImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = A7C9BAB120282E4E003CB82B /* DrawingImageView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,8 @@
 		A7C9BA9E202829D1003CB82B /* DrawingSignatureUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DrawingSignatureUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7C9BAA2202829D1003CB82B /* DrawingSignatureUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DrawingSignatureUITests.m; sourceTree = "<group>"; };
 		A7C9BAA4202829D1003CB82B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A7C9BAB020282E4E003CB82B /* DrawingImageView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DrawingImageView.h; sourceTree = "<group>"; };
+		A7C9BAB120282E4E003CB82B /* DrawingImageView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DrawingImageView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +113,8 @@
 				A7C9BA89202829D0003CB82B /* LaunchScreen.storyboard */,
 				A7C9BA8C202829D1003CB82B /* Info.plist */,
 				A7C9BA8D202829D1003CB82B /* main.m */,
+				A7C9BAB020282E4E003CB82B /* DrawingImageView.h */,
+				A7C9BAB120282E4E003CB82B /* DrawingImageView.m */,
 			);
 			path = DrawingSignature;
 			sourceTree = "<group>";
@@ -268,6 +273,7 @@
 				A7C9BA83202829D0003CB82B /* ViewController.m in Sources */,
 				A7C9BA8E202829D1003CB82B /* main.m in Sources */,
 				A7C9BA80202829D0003CB82B /* AppDelegate.m in Sources */,
+				A7C9BAB220282E4E003CB82B /* DrawingImageView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -432,6 +438,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = DrawingSignature/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = tw.idv.aso.DrawingSignature;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -445,6 +452,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = DrawingSignature/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = tw.idv.aso.DrawingSignature;
 				PRODUCT_NAME = "$(TARGET_NAME)";
