@@ -1,9 +1,15 @@
 ViewController.m
 
-@interface ViewController () @property (weak, nonatomic) IBOutlet DrawingImageView *drawingIV; @end
+@interface ViewController () @property (weak, nonatomic) IBOutlet DrawingImageView *drawingIV; 
 
-清除繪圖層 [self.drawingIV ClearDrawing];
+@end
 
-取圖繪圖層UIImage [self.drawingIV GetLayerImage];
+清除繪圖層 
+[self.drawingIV ClearDrawing];
 
-設定繪圖畫筆 self.drawingIV.lineWidth = 4; self.drawingIV.lineColor = [UIColor blueColor];
+取圖繪圖層UIImage 
+[self.drawingIV GetLayerImage];
+
+設定繪圖畫筆 
+self.drawingIV.lineWidth = 4; 
+self.drawingIV.lineColor = [UIColor blueColor];
