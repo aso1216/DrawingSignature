@@ -1,6 +1,8 @@
 ViewController.m
 
-@interface ViewController () @property (weak, nonatomic) IBOutlet DrawingImageView *drawingIV; 
+@interface ViewController () 
+
+@property (weak, nonatomic) IBOutlet DrawingImageView *drawingIV; 
 
 @end
 
