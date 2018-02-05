@@ -14,8 +14,6 @@
     CAShapeLayer *mLineShapeLayer; //繪圖Layer
     CGPoint lastPoint; //最後移動位置
     BOOL isMoving; //是否正在移動中
-    float lineWidth; //繪圖筆寬度
-    UIColor *lineColor; //繪圖筆顏色
 }
 @end
 
@@ -28,28 +26,29 @@
 
 - (void)defaultInit{
     [self setUserInteractionEnabled:YES];
+    self.lineWidth = 4;
+    self.lineColor = [UIColor redColor];
     isMoving = NO;
-    lineWidth = 4;
-    lineColor = [UIColor redColor];
+
     mLinePath = [[UIBezierPath alloc] init];
     mLineShapeLayer = [[CAShapeLayer alloc] init];
 }
 
 - (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
     [super touchesEnded:touches withEvent:event];
-    NSLog(@"touchesEnded");
     isMoving = NO;
 }
 
 - (void)touchesMoved:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
     [super touchesMoved:touches withEvent:event];
-    NSLog(@"touchesMoved");
     CGPoint movePen = [[touches anyObject] locationInView:self];
     if (movePen.x <0 || movePen.y <0) {
+        isMoving = NO;
         return;
     }
     
     if (movePen.x > self.frame.size.width || movePen.y > self.frame.size.height) {
+        isMoving = NO;
         return;
     }
 
@@ -58,13 +57,28 @@
         [mLinePath moveToPoint:movePen];
     }else{
         [mLinePath addLineToPoint:movePen];
-        mLineShapeLayer.lineWidth = lineWidth;
-        mLineShapeLayer.strokeColor = lineColor.CGColor;
+        mLineShapeLayer.lineWidth = self.lineWidth;
+        mLineShapeLayer.strokeColor = self.lineColor.CGColor;
         mLineShapeLayer.path = mLinePath.CGPath;
         mLineShapeLayer.fillColor = nil;
     }
-    
+
     [self.layer addSublayer:mLineShapeLayer];
 }
 
+- (void)ClearDrawing{
+    mLinePath = [[UIBezierPath alloc] init];
+    mLineShapeLayer = [[CAShapeLayer alloc] init];
+    for (CAShapeLayer *layer in self.layer.sublayers) {
+        [layer removeFromSuperlayer];
+    }
+}
+
+- (UIImage *)GetLayerImage{
+    UIGraphicsBeginImageContextWithOptions(self.layer.frame.size, NO, 0);
+    [self.layer renderInContext:UIGraphicsGetCurrentContext()];
+    UIImage *outputImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return outputImage;
+}
 @end

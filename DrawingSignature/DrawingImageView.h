@@ -10,4 +10,8 @@
 
 @interface DrawingImageView : UIImageView
 
+@property (nonatomic,assign) float lineWidth; //繪圖筆寬度
+@property (nonatomic,strong) UIColor *lineColor; //繪圖筆顏色
+- (void)ClearDrawing; //清除繪圖
+- (UIImage *)GetLayerImage; //取得繪圖
 @end
